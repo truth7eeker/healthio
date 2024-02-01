@@ -13,5 +13,6 @@ import { Spinkit } from 'ng-http-loader';
    templateUrl: './app.component.html',
 })
 export class AppComponent {
+   // Старайся не оставлять неиспользуемые переменные в коде, так он будет банально чище
    public spinkit = Spinkit;
 }
