@@ -1,0 +1,22 @@
+<div class="flex flex-col">
+   <label [class]="labelClassName()" [for]="control()">
+      {{ label() }}
+   </label>
+   <input
+      [id]="id()"
+      [class]="className()"
+      [type]="type()"
+      [formControl]="control()"
+      [minlength]="minlength()"
+      [step]="step()"
+      [min]="minValue()"
+      [value]="value()"
+   />
+   @if (control().invalid && control().dirty && control().touched) {
+      @for (err of control().errors | keyvalue; track err) {
+         <div class="text-red w-72 text-sm">
+            {{ errorMessages[err.key] }}
+         </div>
+      }
+   }
+</div>

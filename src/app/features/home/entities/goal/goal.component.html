@@ -1,0 +1,38 @@
+<div class="goal">
+   <div class="flex items-center gap-1">
+      <div class="px-2 bg-icon-grey rounded-3xl">
+         <fa-icon
+            [icon]="goal().icon"
+            size="sm"
+            [ngStyle]="{ color: goal().iconColor }"
+         >
+         </fa-icon>
+      </div>
+
+      <h3 class="text-sm font-medium">
+         {{ this.goal().name | titlecase }}
+      </h3>
+   </div>
+
+   <app-radial-chart
+      [current]="goal().current"
+      [desired]="goal().desired"
+      [metrics]="goal().metrics"
+      [color]="goal().color"
+      class="relative"
+   />
+   <div class="goal-btns">
+      <button
+         class="px-4 my-1 text-secondary-text-grey"
+         (click)="decrement(this.goal().id)"
+      >
+         &#8722;
+      </button>
+      <button
+         class="px-4 my-1 text-lime border border-l-secondary-text-grey border-y-0 border-r-0"
+         (click)="increment(this.goal().id)"
+      >
+         &#43;
+      </button>
+   </div>
+</div>

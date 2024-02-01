@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+   .wrapper {
+      @apply bg-black min-h-screen grid grid-cols-5
+   }
+   .content {
+      @apply bg-grey col-span-4 m-7 p-7 rounded-2xl
+   }
+   .auth-input {
+      @apply my-2 bg-gray-200 rounded-sm  p-1 w-72 border-2 focus:outline-none focus:border-green-700 focus:rounded-sm invalid:border-red;
+   }
+   .auth-label {
+      @apply text-slate-50 text-lg;
+   }
+   .auth-form {
+      @apply bg-light-grey p-5 rounded-lg flex flex-col;
+   }
+   .form-wrapper {
+      @apply h-screen flex flex-col items-center justify-center bg-black;
+   }
+   .main-btn {
+      @apply bg-lavender px-3 py-1 rounded-sm text-white mt-3 mx-auto block hover:bg-opacity-90 active:scale-105 transition-all;
+   }
+   .item-left {
+      @apply ml-0;
+   }
+
+   .sidebar {
+      @apply text-center p-14 flex flex-col justify-between h-full;
+   }
+   .sidebar-item {
+      @apply cursor-pointer text-sm bg-secondary-text-bg py-2 px-6 text-secondary-text-grey my-2 rounded-2xl;
+   }
+
+   .day-card {
+      @apply bg-mid-grey flex flex-col p-2 items-center rounded-xl  text-gray-200 text-sm cursor-pointer;
+   }
+
+   .goal {
+      @apply bg-light-grey max-w-fit p-4 rounded-xl flex flex-col gap-4 text-center items-center;
+   }
+   .goal-btns {
+      @apply bg-mid-grey flex rounded-md h-7;
+   }
+   .emotion {
+      @apply text-center cursor-pointer bg-light-grey p-3 rounded-md;
+   }
+
+   .goal-input {
+      @apply p-1 bg-mid-grey text-gray-300  h-7  focus:outline-none focus:border-lime rounded-md;
+   }
+   .goal-label {
+      @apply text-white text-base mb-1;
+   }
+
+   .category {
+      @apply text-gray-200 text-sm cursor-pointer tracking-wide bg-light-grey max-w-min px-3 py-1 rounded-xl;
+   }
+
+   .goal-total {
+      @apply bg-light-grey p-3 rounded-md w-3/4;
+   }
+
+   .logout-btn {
+      @apply text-secondary-text-grey cursor-pointer flex gap-3 w-full items-center text-sm px-6 hover:text-gray-400;
+   }
+}

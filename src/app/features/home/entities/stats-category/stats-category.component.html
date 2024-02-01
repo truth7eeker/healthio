@@ -1,0 +1,9 @@
+<div
+   [ngClass]="[
+      'category',
+      category() === name() ? 'bg-lavender text-black' : ''
+   ]"
+   (click)="click(name(), metrics())"
+>
+   {{ name() }}
+</div>

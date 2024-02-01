@@ -1,0 +1,27 @@
+<div class="sidebar">
+   <div>
+      <h2 class="text-lime text-2xl mb-10">Healthio</h2>
+      <ul class="text-light-grey w-full">
+         @for (routeName of routeNames; track routeName) {
+            <li routerLinkActive="text-gray-300" class="sidebar-item">
+               <a
+                  [routerLink]="routes[routeName].route"
+                  class="flex gap-1 justify-center"
+               >
+                  <fa-icon [icon]="routes[routeName].icon"></fa-icon>
+                  {{ routes[routeName].title }}
+               </a>
+            </li>
+         }
+      </ul>
+   </div>
+   <div class="logout-btn" (click)="logout()">
+      <fa-icon [icon]="logoutIcon"></fa-icon>
+      <a 
+         [routerLink]="mainRoutes['login']" 
+         class=""
+      >
+         Log out
+      </a>
+   </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="flex flex-col gap-3 mt-7">
+   <app-goal-total
+      [icon]="target"
+      text="Total Goals"
+      [num]="statsService.totalNum()"
+      color="#E55733"
+   />
+   <app-goal-total
+      [icon]="goalDesc[this.statsService.category()].icon"
+      text="Current Goal"
+      num="{{ statsService.progress() }}"
+      [color]="goalDesc[this.statsService.category()].iconColor"
+   />
+   <app-goal-total
+      [icon]="happy"
+      text="Happy Days"
+      [num]="statsService.happyDays()"
+      color="#FBEF5C"
+   />
+</div>

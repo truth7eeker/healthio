@@ -1,0 +1,45 @@
+<div class="form-wrapper">
+   <h2 class="text-4xl text-lime mb-6">Healthio</h2>
+   <form
+      class="auth-form"
+      [formGroup]="registrationData"
+      (ngSubmit)="onSubmit()"
+   >
+      <h3 class="text-xl text-center text-gray-400 mb-5">
+         Sign Up for Healthio
+      </h3>
+      <app-input
+         id="name"
+         label="Name"
+         type="text"
+         [control]="registrationData.controls['name'] | formControl"
+         className="auth-input"
+         labelClassName="auth-label"
+      />
+      <app-input
+         id="email"
+         label="Email"
+         type="email"
+         [control]="registrationData.controls['email'] | formControl"
+         className="auth-input"
+         labelClassName="auth-label"
+      />
+      <app-input
+         id="password"
+         label="Password"
+         type="password"
+         [control]="registrationData.controls['password'] | formControl"
+         className="auth-input"
+         minlength="8"
+         labelClassName="auth-label"
+      />
+      <app-main-btn title="Sign Up" className="main-btn" type="submit" />
+      <div class="text-red mt-2 w-72 text-sm">{{ http.authErr() }}</div>
+      <a
+         routerLink="/login"
+         class="text-gray-400 mt-4 block underline text-sm text-center"
+      >
+         Have an account? Login here!</a
+      >
+   </form>
+</div>

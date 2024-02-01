@@ -1,0 +1,9 @@
+<div
+   [ngClass]="['emotion', emotion().active ? 'text-lime' : '']"
+   (click)="setEmotion(emotion().id)"
+>
+   <fa-icon [icon]="emotion().icon"> </fa-icon>
+   <div class="text-sm">
+      {{ emotion().name | titlecase }}
+   </div>
+</div>

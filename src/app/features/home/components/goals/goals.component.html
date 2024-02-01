@@ -1,0 +1,8 @@
+<div>
+   <h3 class="mb-3">Daily check-in</h3>
+   <div class="grid grid-cols-4 items-start w-fit gap-4">
+      @for (goal of healthService.health().goals; track goal) {
+         <app-goal [goal]="goal" />
+      }
+   </div>
+</div>

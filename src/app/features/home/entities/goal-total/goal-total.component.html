@@ -1,0 +1,10 @@
+<div class="goal-total">
+   <div class="px-2 bg-icon-grey rounded-3xl w-fit">
+      <fa-icon [icon]="icon" size="sm" [ngStyle]="{ color: color() }">
+      </fa-icon>
+   </div>
+   <div class="my-2">{{ text() }}</div>
+   <h2 class="text-xl mt-1">
+      {{ num() }} {{ text() !== 'Happy Days' ? '%' : '' }}
+   </h2>
+</div>

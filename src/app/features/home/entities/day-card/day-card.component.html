@@ -1,0 +1,12 @@
+<div
+   [ngClass]="[
+      'day-card',
+      calendarService.selectedDay()?.toString() === day().toString()
+         ? 'bg-lime text-black'
+         : ''
+   ]"
+   (click)="select(day())"
+>
+   <span>{{ day() | date: 'MMM' }}</span>
+   <span>{{ day() | date: 'd' }}</span>
+</div>

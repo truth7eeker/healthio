@@ -1,0 +1,8 @@
+<div>
+   <h3 class="mb-3">Mood</h3>
+   <div class="grid grid-cols-5 items-start w-fit gap-3">
+      @for (emotion of healthService.health().emotions; track emotion) {
+         <app-emotion [emotion]="emotion" />
+      }
+   </div>
+</div>

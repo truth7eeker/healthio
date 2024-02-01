@@ -1,0 +1,17 @@
+<div class="relative">
+   <div id="chart">
+      <apx-chart
+         [series]="chartOptions.series"
+         [chart]="chartOptions.chart"
+         [fill]="chartOptions.fill"
+         [plotOptions]="chartOptions.plotOptions"
+      >
+      </apx-chart>
+   </div>
+</div>
+<div class="absolute left-0 right-0 m-auto top-[50%] translate-y-[-50%]">
+   <div>{{ current() }}/{{ desired() }}</div>
+   <div class="text-xs text-secondary-text-grey font-semibold">
+      {{ metrics() }}
+   </div>
+</div>

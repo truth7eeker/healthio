@@ -1,0 +1,15 @@
+<div class="text-white">
+   <h2 class="text-xl mb-5">Stats & Progress</h2>
+   <div class="grid grid-cols-3 gap-5">
+      <div class="col-span-2">
+         <app-stats-categories />
+         <app-column-chart
+            [nums]="statsService.goalsNums()"
+            [labels]="statsService.dates()"
+            [category]="statsService.category()"
+            [yaxisText]="statsService.chartText()"
+         />
+      </div>
+      <app-goals-total />
+   </div>
+</div>

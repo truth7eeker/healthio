@@ -1,0 +1,10 @@
+<div class="flex gap-4 mt-3">
+   @for (goal of goals; track goal) {
+      <app-stats-category
+         [name]="goal.name"
+         [metrics]="goal.metrics"
+         [category]="statsService.category()"
+         (handleClick)="handleClick($event)"
+      />
+   }
+</div>

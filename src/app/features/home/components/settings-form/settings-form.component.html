@@ -1,0 +1,51 @@
+<form
+    class="flex flex-col gap-3 text-black p-3"
+    [formGroup]="desiredGoalsForm"
+    (ngSubmit)="onSubmit()"
+>
+    <app-input
+        type="number"
+        className="goal-input"
+        label="Water (glass)"
+        labelClassName="goal-label"
+        step="0.1"
+        minValue="0.1"
+        value="5"
+        [control]="desiredGoalsForm.controls['water'] | formControl"
+    />
+    <app-input
+        type="number"
+        className="goal-input"
+        label="Sleep (hour)"
+        labelClassName="goal-label"
+        step="0.1"
+        minValue="0.1"
+        value="5"
+        [control]="desiredGoalsForm.controls['sleep'] | formControl"
+    />
+    <app-input
+        type="number"
+        className="goal-input"
+        label="Exercise (hour)"
+        labelClassName="goal-label"
+        step="0.1"
+        minValue="0.1"
+        value="5"
+        [control]="desiredGoalsForm.controls['exercise'] | formControl"
+    />
+    <app-input
+        type="number"
+        className="goal-input"
+        label="Outdoor (hour)"
+        labelClassName="goal-label"
+        step="0.1"
+        minValue="0.1"
+        value="5"
+        [control]="desiredGoalsForm.controls['outdoor'] | formControl"
+    />
+    <app-main-btn
+        title="Save Goals"
+        type="submit"
+        className="main-btn item-left"
+    />
+</form>
