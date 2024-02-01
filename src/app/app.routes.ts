@@ -5,6 +5,7 @@ import { mainRoutes } from './core/constants/routes'
 
 export const routes: Routes = [
    {
+      // Для логина и регистрации тоже нужен guard, чтобы не пускать залогиненного пользователя
       path: mainRoutes.login,
       loadComponent: () =>
          import('./features/login/login.component').then(

@@ -44,12 +44,16 @@ export class SettingsFormComponent {
   }
 
   setDefault() {
-     this.healthService.health().goals.map((g) => {
+      // Если вам нужно пройтись по массиву, и выполнить какое-то действие, то лучше использовать метод forEach
+      // Если же тебе нужно пройтись по массиву, преобразовать каждый его элемент и важно вернуть измененный массив, то лучше использовать map
+     // Здесь ты просто проходишься по массиву, без его изменения, и ничего не возвращаешь. Я удивлен почему IDE не ругается на то, что ты ничего не возвращаешь внутри map
+      this.healthService.health().goals.map((g) => {
         const key = this.desiredGoalsForm.get([g.name])
         key && key.setValue(g.desired)
      })
   }
 
+  // Не забывай добавлять что класс имплементирует соответствующие интерфейсы
   ngOnInit() {
      this.subs.add(this.desiredGoalsForm.valueChanges.subscribe())
      this.setDefault()

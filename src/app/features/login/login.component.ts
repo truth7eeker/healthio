@@ -28,9 +28,11 @@ import { SubscriptionHandler } from 'src/app/shared/utils/subscription.utils'
    providers: [AuthService],
 })
 export class LoginComponent implements OnInit, OnDestroy {
+   // Название не самое подходящее, обычно дублируют название сервиса, но с маленькой буквы (экземпляр класса)
    readonly http: AuthService = inject(AuthService)
    readonly subs = new SubscriptionHandler()
 
+   // Не забывай типизировать формы
    loginData: FormGroup = new FormGroup({
       login: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
@@ -40,6 +42,7 @@ export class LoginComponent implements OnInit, OnDestroy {
    })
 
    ngOnInit() {
+      // Очень правильная идея, круто что ты об этом подумала
       this.subs.add(this.loginData.valueChanges.subscribe())
    }
 

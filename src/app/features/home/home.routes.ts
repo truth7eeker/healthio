@@ -2,6 +2,7 @@ import { Routes } from '@angular/router'
 
 export const HomeRoutes: Routes = [
    {
+      // Вот тут хорошо бы зашли enum
       path: 'today',
       loadComponent: () =>
          import('./widgets/today/today.component').then(
